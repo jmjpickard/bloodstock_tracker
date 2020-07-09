@@ -1,5 +1,8 @@
-# cookie_cutter
-default project repository template for future CF DS team
+# Bloodstock tracker
+Scrapes racing post website for data.
+
+* Bloodstock stats taken weekly
+* Racing results daily
 
 ## How to use a template
 
