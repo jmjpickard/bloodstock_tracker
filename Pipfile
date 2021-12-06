@@ -18,6 +18,8 @@ scipy = "==1.7.1"
 selenium = "==4.0.0"
 webdriver-manager = "==3.5.1"
 ipython_genutils = "==0.2.0"
+tabula-py = "*"
+currencyconverter = "*"
 
 [dev-packages]
 
