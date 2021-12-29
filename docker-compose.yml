@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: app
+    entrypoint: ["/usr/src/app/entrypoint.sh"]
+    volumes:
+      - "./server/:/usr/src/app"
+    ports:
+      - 5002:5000
+    environment:
+      - FLASK_ENV=development
+      - APP_SETTINGS=app.config.DevelopmentConfig
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - postgres
+
+  postgres:
+    build:
+      context: ./server/app/db
+      dockerfile: Dockerfile
+    container_name: db
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
